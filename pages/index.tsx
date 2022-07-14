@@ -3,7 +3,7 @@ import clientPromise from '../lib/mongodb'
 
 export default function Index({ isConnected }) {
   return (
-    <><small>isConnected: {isConnected}</small>
+    <><small>isConnected 2: {isConnected}</small>
       <p>
         To test the CORS route, open the console in a new tab on a different
         domain and make a POST / GET / OPTIONS request to <b>/api/cors</b>. Using
