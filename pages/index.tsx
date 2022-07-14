@@ -1,9 +1,10 @@
 import Head from 'next/head'
-import clientPromise from '../lib/mongodb'
+import resultado from '../lib/mongodb'
 
-export default function Index({ isConnected }) {
+export default function Index({ resultado }) {
   return (
-    <><small>isConnected 2: {isConnected}</small>
+    <><small>isConnected 2: {resultado}</small>
+    
       <p>
         To test the CORS route, open the console in a new tab on a different
         domain and make a POST / GET / OPTIONS request to <b>/api/cors</b>. Using
