@@ -1,6 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Cors from 'cors'
-import { MongoClient, ServerApiVersion } from "mongodb";
+import { MongoClient } from "mongodb"
+ 
+
 
 // Initializing the cors middleware
 // You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
@@ -33,44 +35,14 @@ export default async function handler(
   // Run the middleware
   await runMiddleware(req, res, cors)
 
-
-  // Initialize the database connection
-  // fetch the JSON data from Mongo Atlas
-  const uri = "mongodb+srv://dolarboy:dolarboy@ff4helper.oidxnqu.mongodb.net/?retryWrites=true&w=majority";
-  try {
-      const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-      client.connect(err => {
-          const collection = client.db("dolarboy").collection("dolarboy");
-
-          let filter = {
-
-              document: "dolarboy-cards"
-
-          };
-          collection.find(filter).sort({ _id: -1 }).limit(1).toArray(function (err, result) {
-              if (err) throw err;
-              console.log(result);
-              res.json(result);
-              client.close(); 
-          }
-          );
-
-          /*
-          collection.findOne(filter, (err, result) => {
-              if (err) return res.status(500).send(err);
-              console.log(result.nombre);
-              res.send(result);
-              client.close();
-          });*/
-
-      });
-  }
-  catch (err) {
-      console.log(err);
-      res.json(err);
-  }
-
   // Rest of the API logic
-  //res.json({ message: 'Hello Everyone!' })
+  res.json({ message: 'Hello Everyone 2!' })
 }
 
+
+
+
+ 
+
+
+ 
