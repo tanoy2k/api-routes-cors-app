@@ -6,7 +6,7 @@ export default function Index({ resultado }) {
     <>
   
     <Head>
-    <small>isConnected 3: {clientPromise}</small>
+    <small>isConnected 4: {clientPromise}</small>
     </Head>
       <p>
         To test the CORS route, open the console in a new tab on a different
