@@ -1,4 +1,7 @@
-export default function Index() {
+import Head from 'next/head'
+import clientPromise from '../lib/mongodb'
+
+export default function Index({ isConnected }) {
   return (
     <p>
       To test the CORS route, open the console in a new tab on a different
