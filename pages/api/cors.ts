@@ -50,7 +50,7 @@ export default async function handler(
           collection.find(filter).sort({ _id: -1 }).limit(1).toArray(function (err, result) {
               if (err) throw err;
               console.log(result);
-              return res.send(result);
+              res.json(result);
               client.close(); 
           }
           );
@@ -67,10 +67,10 @@ export default async function handler(
   }
   catch (err) {
       console.log(err);
-      return res.send(err);
+      res.json(err);
   }
 
   // Rest of the API logic
-  res.json({ message: 'Hello Everyone!' })
+  //res.json({ message: 'Hello Everyone!' })
 }
 
